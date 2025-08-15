@@ -2,6 +2,10 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/hello")
-def hello():
-    return {"message": "Backend is live!"}
+@app.get("/")
+def read_root():
+    return {"message": "Hello from Trading Backend!"}
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
